@@ -1,0 +1,1 @@
+export const COMMON_TESTE = 'COMMON_TESTE';
