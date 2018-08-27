@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet,TouchableOpacity } from 'react-native';
 
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import Scanner from './scanner';
 
 class InitialScreen extends Component {
 
@@ -14,9 +15,13 @@ class InitialScreen extends Component {
         const { teste } = this.props
         return (
             <View style={styles.container}>
-              <Text> 
-                ERP Estoque - { teste ? "Redux ativado" : "Redux Desativado" }
-              </Text>
+                <Text> 
+                    ERP Estoque - { teste ? "Redux ativado" : "Redux Desativado" }
+                </Text>
+                <TouchableOpacity
+                    onPress={() => this.props.history.push('scanner')} >
+                    <Text>Abrir Leitor</Text>
+                </TouchableOpacity>
             </View>
         );
     }

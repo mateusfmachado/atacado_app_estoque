@@ -7,6 +7,7 @@ import store from './store';
 import { NativeRouter, Route, Link } from 'react-router-native';
 
 import InitialScreen from './components/estoque';
+import Scanner from './components/estoque/scanner';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -16,6 +17,7 @@ export default class App extends Component<Props> {
         <NativeRouter>
           <View style={styles.container}>
             <Route exact path="/" component={InitialScreen} />
+            <Route path="/scanner" component={Scanner} />
           </View>
         </NativeRouter>
       </Provider>
@@ -25,8 +27,6 @@ export default class App extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: 25,
-    padding: 10,
+    flex: 1
   }
 });
